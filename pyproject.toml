@@ -95,7 +95,7 @@ extra-dependencies = [
     "sphinx==8.2.3",
     "sphinx-autobuild==2024.10.3",
     "myst-parser==4.0.1",
-    "furo"
+    "sphinx_rtd-theme",
 ]
 
 [tool.hatch.envs.docs.scripts]

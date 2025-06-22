@@ -13,7 +13,12 @@ author: str = "maromei"
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions: list[str] = ["myst_parser"]
+extensions: list[str] = [
+    "sphinx.ext.napoleon",
+    "sphinx.ext.autodoc",
+    "myst_parser",
+    "sphinx_rtd_theme",
+]
 
 templates_path: list[str] = ["_templates"]
 exclude_patterns: list[str] = []
@@ -21,5 +26,5 @@ exclude_patterns: list[str] = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme: str = "furo"
+html_theme: str = "sphinx_rtd_theme"
 html_static_path: list[str] = ["_static"]
