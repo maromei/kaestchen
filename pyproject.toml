@@ -51,8 +51,12 @@ installer = "uv"
 
 [tool.hatch.envs.style]
 installer = "uv"
-additional-dependencies = [
+extra-dependencies = [
     "ruff",
     "mypy",
     "pre-commit"
 ]
+
+[tool.hatch.envs.style.scripts]
+pre-commit-install = "pre-commit install" # install pre-commit hooks
+pre-commit-update = "pre-commit autoupdate" # update hook versions
