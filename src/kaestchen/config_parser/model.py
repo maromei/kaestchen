@@ -1,3 +1,9 @@
+"""Pydantic XML models for Kaestchen file configuration.
+
+This module defines the XML structure for Kaestchen's configuration files,
+including CSV data, sheets, columns, and their rendering options.
+"""
+
 from enum import Enum
 
 from pydantic_xml import BaseXmlModel
