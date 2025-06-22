@@ -10,6 +10,7 @@ htmlcov/
 
 # venvs
 .venv/
+uv.lock
 
 # documentation
 docs/build/html/*
