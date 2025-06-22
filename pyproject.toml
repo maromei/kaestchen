@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+########################
+### PROJECT METADATA ###
+########################
+
+[project]
+name = "kaestchen"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+keywords = []
+authors = [
+    {name = "maromei", email = "maromei@proton.me"},
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/maromei/kaestchen#readme"
+Issues = "https://github.com/maromei/kaestchen/issues"
+Source = "https://github.com/maromei/kaestchen"
+
+[tool.hatch.version]
+path = "src/kaestchen/__about__.py"
+
+####################
+### ENVIRONMENTS ###
+####################
+
+### Default ###
+
+[tool.hatch.envs.default]
+installer = "uv"
+
+### Style ###
+
+[tool.hatch.envs.style]
+installer = "uv"
+additional-dependencies = [
+    "ruff",
+    "mypy",
+    "pre-commit"
+]

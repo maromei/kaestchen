@@ -1,0 +1,5 @@
+# cache / temp files
+__pycache__/
+
+# venvs
+.venv/
