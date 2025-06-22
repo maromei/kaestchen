@@ -5,3 +5,7 @@ __pycache__/
 
 # venvs
 .venv/
+
+# documentation
+docs/build/html/*
+!docs/build/html/.gitkeep

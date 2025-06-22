@@ -60,3 +60,17 @@ extra-dependencies = [
 [tool.hatch.envs.style.scripts]
 pre-commit-install = "pre-commit install" # install pre-commit hooks
 pre-commit-update = "pre-commit autoupdate" # update hook versions
+
+### Docs ###
+
+[tool.hatch.envs.docs]
+installer = "uv"
+extra-dependencies = [
+    "sphinx==8.2.3",
+    "sphinx-autobuild==2024.10.3",
+    "myst-parser==4.0.1",
+    "furo"
+]
+
+[tool.hatch.envs.docs.scripts]
+serve = "sphinx-autobuild docs/source docs/build/html"
