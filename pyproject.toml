@@ -48,6 +48,15 @@ path = "src/kaestchen/__about__.py"
 [tool.pytest.ini_options]
 testpaths = ["src/tests"]
 
+#################
+### TOOL MYPY ###
+#################
+
+[tool.mypy]
+plugins = [
+  "pydantic_xml.mypy"
+]
+
 ####################
 ### ENVIRONMENTS ###
 ####################
