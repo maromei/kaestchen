@@ -28,7 +28,10 @@ classifiers = [
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = []
+dependencies = [
+    "pydantic>=2.11.7",
+    "pydantic-xml>=2.17.2",
+]
 
 [project.urls]
 Documentation = "https://github.com/maromei/kaestchen#readme"
@@ -53,6 +56,9 @@ testpaths = ["src/tests"]
 
 [tool.hatch.envs.default]
 installer = "uv"
+extra-dependencies = [
+    "ipython"
+]
 
 ### Style ###
 
@@ -67,6 +73,10 @@ extra-dependencies = [
 [tool.hatch.envs.style.scripts]
 pre-commit-install = "pre-commit install" # install pre-commit hooks
 pre-commit-update = "pre-commit autoupdate" # update hook versions
+check = [
+    "ruff check src",
+    "mypy src"
+]
 
 ### Docs ###
 
