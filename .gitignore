@@ -9,3 +9,4 @@ __pycache__/
 # documentation
 docs/build/html/*
 !docs/build/html/.gitkeep
+.~lock*
