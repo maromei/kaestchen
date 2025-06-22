@@ -38,6 +38,13 @@ Source = "https://github.com/maromei/kaestchen"
 [tool.hatch.version]
 path = "src/kaestchen/__about__.py"
 
+###################
+### TOOL PYTEST ###
+###################
+
+[tool.pytest.ini_options]
+testpaths = ["src/tests"]
+
 ####################
 ### ENVIRONMENTS ###
 ####################
@@ -74,3 +81,17 @@ extra-dependencies = [
 
 [tool.hatch.envs.docs.scripts]
 serve = "sphinx-autobuild docs/source docs/build/html"
+
+### Tests ###
+
+[tool.hatch.envs.tests]
+installer = "uv"
+extra-dependencies = [
+    "pytest-cov==6.1.1"
+]
+
+[tool.hatch.envs.tests.scripts]
+run = [
+    "pytest --cov=kaestchen --cov-report html",
+    "firefox file://$PWD/htmlcov/index.html"
+]
