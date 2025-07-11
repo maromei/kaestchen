@@ -10,7 +10,7 @@ from sphinx.roles import SphinxRole
 from docutils import nodes
 
 
-def setup(app: Sphinx) -> None:
+def setup(app: Sphinx) -> dict:
     """
     Setup function for the Sphinx extension.
 
@@ -19,7 +19,7 @@ def setup(app: Sphinx) -> None:
     """
 
     app.add_role("feature", FeatureReferenceRole())
-    app.add_directive("feature", FeatureReferenceRole)
+
     return {
         "version": "0.1",
         "parallel_read_safe": True,

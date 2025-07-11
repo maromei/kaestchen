@@ -56,8 +56,7 @@ plugins = [
 [dependency-groups]
 dev = [
     "docutils>=0.21.2",
-    "sphinx>=8.1.3",
-    "types-docutils>=0.21.0.20250710",
+    "sphinx>=8.1.3"
 ]
 
 ####################
@@ -79,7 +78,9 @@ installer = "uv"
 extra-dependencies = [
     "ruff",
     "mypy",
-    "pre-commit"
+    "pre-commit",
+    "types-docutils",
+    "sphinx"
 ]
 
 [tool.hatch.envs.style.scripts]
