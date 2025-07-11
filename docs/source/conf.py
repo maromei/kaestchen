@@ -18,6 +18,7 @@ extensions: list[str] = [
     "sphinx.ext.autodoc",
     "myst_parser",
     "sphinx_rtd_theme",
+    "sphinx_feature_reference",
 ]
 
 templates_path: list[str] = ["_templates"]
