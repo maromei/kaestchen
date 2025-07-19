@@ -112,6 +112,10 @@ def generate_default_xml_sheets() -> list[XMLSheet]:
 class XMLKaestchen(BaseXmlModel, tag="kaestchen"):
     """Model for the Kaestchen XML configuration.
 
+    Initializing this class without any arguments will result
+    in the most minimal valid XML structure.
+    (:feature:`extensions.kaestchen.default`)
+
     Attributes:
         format_version (str): The version of the XML format, defaults to
             the value of :py:attr:`kaestchen.__about__.__xml_format_version__`.
