@@ -27,6 +27,7 @@ dependencies = [
     "lxml>=6.0.0",
     "pydantic>=2.11.7",
     "pydantic-xml>=2.17.2",
+    "xmltodict>=0.14.2",
 ]
 
 [project.urls]
@@ -81,7 +82,8 @@ extra-dependencies = [
     "mypy",
     "pre-commit",
     "types-docutils",
-    "sphinx"
+    "sphinx",
+    "types-xmltodict>=0.14.0.20241009"
 ]
 
 [tool.hatch.envs.style.scripts]
@@ -89,7 +91,7 @@ pre-commit-install = "pre-commit install" # install pre-commit hooks
 pre-commit-update = "pre-commit autoupdate" # update hook versions
 check = [
     "ruff check src",
-    "mypy src"
+    "mypy src --check-untyped-defs"
 ]
 
 ### Docs ###

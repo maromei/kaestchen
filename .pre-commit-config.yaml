@@ -18,8 +18,10 @@ repos:
     rev: 'v1.16.1'
     hooks:
     -   id: mypy
+        args: [--check-untyped-defs]
         additional_dependencies: [
           "pydantic-xml==2.17.2",
           "types-docutils",
-          "sphinx"
+          "sphinx",
+          "types-xmltodict>=0.14.0.20241009"
         ]
