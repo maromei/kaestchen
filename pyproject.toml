@@ -86,6 +86,7 @@ extra-dependencies = [
 [tool.hatch.envs.style.scripts]
 pre-commit-install = "pre-commit install" # install pre-commit hooks
 pre-commit-update = "pre-commit autoupdate" # update hook versions
+pre-commit-test = "pre-commit run --all-files"
 check = [
     "ruff check src",
     "mypy src --check-untyped-defs"
