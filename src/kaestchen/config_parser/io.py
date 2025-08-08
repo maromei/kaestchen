@@ -49,15 +49,18 @@ def read_kaestchen_file(
     return model
 
 
-def write_kaestchen_file(file_path: Path, model: XMLKaestchen) -> None:
+def write_kaestchen_file(
+    file_path: Path, model: XMLKaestchen, encoding: str = "utf-8"
+) -> None:
     """Writes the Kaestchen XML model to a file.
 
     Args:
         file_path (Path): The path where the XML file will be written.
         model (XMLKaestchen): The XML model to write.
+        encoding (str): Encoding of the file. Defaults to ``utf-8``.
     """
 
     xml_content: str = model.model_dump_xml()
-    with file_path.open("w") as file:
+    with file_path.open("w", encoding=encoding) as file:
         file.write(xml_content)
     LOGGER.info(f"Kaestchen XML file written to {file_path}")
