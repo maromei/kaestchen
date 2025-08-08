@@ -23,5 +23,6 @@ repos:
           "types-docutils",
           "sphinx",
           "types-xmltodict>=0.14.0.20241009",
-          "pydantic>=2.11.7"
+          "pydantic>=2.11.7",
+          "pytest-cov"
         ]
