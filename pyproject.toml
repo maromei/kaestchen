@@ -80,7 +80,8 @@ extra-dependencies = [
     "pre-commit",
     "types-docutils",
     "sphinx",
-    "types-xmltodict>=0.14.0.20241009"
+    "types-xmltodict>=0.14.0.20241009",
+    "pytest-cov"
 ]
 
 [tool.hatch.envs.style.scripts]
@@ -115,7 +116,9 @@ extra-dependencies = [
 ]
 
 [tool.hatch.envs.tests.scripts]
-run = [
+all = "pytest {args}"
+module = "pytest src/tests/{args}"
+cov = [
     "pytest --cov=kaestchen --cov-report html",
     "firefox file://$PWD/htmlcov/index.html"
 ]
