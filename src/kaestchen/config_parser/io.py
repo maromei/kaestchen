@@ -34,8 +34,16 @@ def read_kaestchen_file(
     if isinstance(file_path_or_content, Path):
         file_path: Path = file_path_or_content
         file_content = file_path.read_text(encoding=encoding)
+
+        file_path_str: str = str(file_path.resolve())
+        LOGGER.info(f"Kaestchen XML file read from '{file_path_str}' ({encoding})")
+
     elif isinstance(file_path_or_content, str):
         file_content = str(file_path_or_content)
+
+        LOGGER.info("Kaestchen XML file read from string")
+        LOGGER.debug(f"Content:\n{file_content}")
+
     else:
         msg: str = (
             f"Invalid type '{str(type(file_path_or_content))}' passed to "
@@ -63,4 +71,6 @@ def write_kaestchen_file(
     xml_content: str = model.model_dump_xml()
     with file_path.open("w", encoding=encoding) as file:
         file.write(xml_content)
-    LOGGER.info(f"Kaestchen XML file written to {file_path}")
+
+    file_path_str: str = str(file_path.resolve())
+    LOGGER.info(f"Kaestchen XML file written to '{file_path_str}' ({encoding})")
