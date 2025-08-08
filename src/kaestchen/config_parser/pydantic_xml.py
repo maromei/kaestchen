@@ -149,6 +149,15 @@ class BaseXmlModel(BaseModel, extra="allow"):
     def model_validate_xml(
         cls: Type[BoundBaseXmlModel], xml_str: str, *args, **kwargs
     ) -> "BoundBaseXmlModel":
+        """Validate the model based on an xml formatted string
+
+        Args:
+            cls (Type[BoundBaseXmlModel]):
+            xml_str (str): xml formatted string
+
+        Returns:
+            BoundBaseXmlModel: validated model
+        """
         model_dict: dict = xmltodict.parse(xml_str)
         new_model: "BoundBaseXmlModel" = cls.model_validate(model_dict, *args, **kwargs)
         return new_model
