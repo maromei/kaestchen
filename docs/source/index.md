@@ -7,4 +7,5 @@
 general_idea
 xml_format
 code_reference/index
+architecture_reference/index
 ```
