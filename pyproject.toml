@@ -102,10 +102,17 @@ extra-dependencies = [
     "sphinx-autobuild==2024.10.3",
     "myst-parser==4.0.1",
     "sphinx_rtd-theme",
+    "sphinxcontrib-plantuml",
+    "pytest-cov",
 ]
 
 [tool.hatch.envs.docs.scripts]
+install-plantuml = "scripts/install-plantuml.sh"
 serve = "sphinx-autobuild docs/source docs/build/html"
+
+[tool.hatch.envs.docs.env-vars]
+PLANTUML_VERSION="1.2025.4"
+PLANTUML_OUTPUT_PATH="docs/external"
 
 ### Tests ###
 

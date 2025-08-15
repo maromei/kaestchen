@@ -16,6 +16,8 @@ uv.lock
 # documentation
 docs/build/html/*
 !docs/build/html/.gitkeep
+docs/external/*
+!docs/external/.gitkeep
 .~lock*
 
 # Personal notes
