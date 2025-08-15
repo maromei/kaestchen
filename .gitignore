@@ -17,3 +17,6 @@ uv.lock
 docs/build/html/*
 !docs/build/html/.gitkeep
 .~lock*
+
+# Personal notes
+.obsidian/
