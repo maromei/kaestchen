@@ -109,6 +109,7 @@ extra-dependencies = [
 [tool.hatch.envs.docs.scripts]
 install-plantuml = "scripts/install-plantuml.sh"
 serve = "sphinx-autobuild docs/source docs/build/html"
+clean = "make --directory=docs clean"
 
 [tool.hatch.envs.docs.env-vars]
 PLANTUML_VERSION="1.2025.4"
