@@ -51,3 +51,7 @@ if not plantuml_jar_path.exists():
         "Try running 'hatch run docs:install-plantuml'."
     )
 plantuml: Final[str] = f"java -jar {plantuml_jar_path}"
+
+# -- AutoDoc Configuration --------------------------------------------------
+
+autodoc_default_options: dict[str, bool] = {"members": True, "private-members": True}
