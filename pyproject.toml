@@ -26,6 +26,7 @@ classifiers = [
 dependencies = [
     "lxml>=6.0.0",
     "pydantic>=2.11.7",
+    "pydantic-settings>=2.10.1",
     "xmltodict>=0.14.2",
 ]
 
@@ -49,7 +50,11 @@ testpaths = ["src/tests"]
 #################
 
 [tool.mypy]
-plugins = []
+plugins = ["pydantic.mypy"]
+
+############################
+### DEV DEPENDENCY GROUP ###
+############################
 
 [dependency-groups]
 dev = [

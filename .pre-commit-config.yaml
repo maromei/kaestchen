@@ -24,5 +24,6 @@ repos:
           "sphinx",
           "types-xmltodict>=0.14.0.20241009",
           "pydantic>=2.11.7",
-          "pytest-cov"
+          "pytest-cov",
+          "pydantic-settings>=2.10.1",
         ]

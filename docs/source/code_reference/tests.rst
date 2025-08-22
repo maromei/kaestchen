@@ -10,6 +10,6 @@ test_xml_format
 test_conf
 ---------
 
-.. automodule:: tests.test_conf.env_vars
+.. automodule:: tests.test_conf.test_env_vars
     :members:
 
