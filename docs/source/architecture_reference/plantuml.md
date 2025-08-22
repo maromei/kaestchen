@@ -13,7 +13,7 @@ needs to be set. To decide where the `*.jar` file will be saved, the
 
 ```{plantuml}
 
-!theme sandstone
+!theme mars
 
 state ".gitignore" as gitignore
 gitignore : Ignore everything but the "".gitkeep""
