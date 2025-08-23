@@ -9,7 +9,7 @@ For more information about the idea behind the configuration setup, see the
 
 import os
 import logging
-from typing import Final, ClassVar
+from typing import Final, ClassVar, Any, cast
 from enum import StrEnum
 from pathlib import Path
 
@@ -153,4 +153,34 @@ class EnvironmentSettings(BaseSettings):
 
 
 class Settings:
-    pass
+    """Settings object combining multiple sources into a single interface
+
+    See the :ref:`configuration architecture reference <architecture_configuration>`
+    for more information.
+    """
+
+    #: Reference to the object managing the environment variables.
+    env_variables: EnvironmentSettings
+
+    def __init__(self):
+        """Initializes the settings object with its sources."""
+        self.env_variables = EnvironmentSettings()
+
+    def __resolve_from_references(self, attr_name: str) -> Any:
+        """Get a value with conflicts from multiple sources resolved
+
+        Args:
+            attr_name (str): name of the attibute
+
+        Returns:
+            Any: value
+        """
+        value: Any = getattr(self.env_variables, attr_name)
+        return value
+
+    @property
+    def logdir(self) -> Path:
+        """Unresolved path to a Logging directory"""
+        resolved_reference: Any = self.__resolve_from_references("logdir")
+        _logdir: str = cast(str, resolved_reference)
+        return Path(_logdir)
