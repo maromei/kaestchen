@@ -109,6 +109,7 @@ extra-dependencies = [
     "sphinx_rtd-theme",
     "sphinxcontrib-plantuml",
     "pytest-cov",
+    "autodoc-pydantic>=2.2.0",
 ]
 
 [tool.hatch.envs.docs.scripts]

@@ -31,13 +31,12 @@ class EnvKeys(StrEnum):
     the prefix ``KAESTCHEN_`` and the actual environment variable names. In addition,
     the names are not case sensitive. This enum tries to give an explicit list
     of environment variable names.
-
-    Attributes:
-        KAESTCHEN_DOTENV_FILE (str): Path to a ``.env`` file.
-        KAESTCHEN_LOGDIR (str): Directory for logging files.
     """
 
+    #: Path to a ``.env`` file.
     KAESTCHEN_DOTENV_FILE = "KAESTCHEN_DOTENV_FILE"
+
+    #: Directory for logging files.
     KAESTCHEN_LOGDIR = "KAESTCHEN_LOGDIR"
 
 
@@ -52,21 +51,9 @@ class EnvironmentSettings(BaseSettings):
     If :py:attr:`EnvKeys.KAESTCHEN_DOTENV_FILE` is specified in the environment,
     it will be used instead. Should the given filepath be invalid,
     :py:class:`kaestchen.exceptions.DotEnvFileDoesNotExist` will be raised.
-
-    Attributes:
-        model_config (SettingsConfigDict): ``pydantic-settings`` configuration.
-        dotenv_file (str | None): Defaults to ``None``. Absolute path to a ``.env`` file.
-            If specified in the environment, but the file it points to is invalid,
-            an error will be raised.
-            See :py:meth:`EnvironmentSettings.check_dotenvpath` for the
-            validator function and feature
-            :feature:`kaestchen.conf.EnvironmentSettings.dotenv.invalid_path`.
-            Note that the specified path will always be absolute, regardless of
-            how it was specified in the environment to make it explicit which
-            `.env` file was used on instantiation.
-        logdir (str): Defaults to ``logs``. Directory for logging files.
     """
 
+    #: ``pydantic-settings`` configuration.
     model_config: ClassVar[SettingsConfigDict] = SettingsConfigDict(
         env_prefix="kaestchen_",
         env_file="DUMMY: value set in __init__ via __update_model_config_env_path()",
@@ -149,7 +136,19 @@ class EnvironmentSettings(BaseSettings):
         LOGGER.error(msg)
         raise DotEnvFileDoesNotExist(msg)
 
+    #: Absolute path to a ``.env`` file.
+    #:
+    #: If specified in the environment, but the file it points to is invalid,
+    #: an error will be raised.
+    #: See :py:meth:`EnvironmentSettings.check_dotenvpath` for the
+    #: validator function and feature
+    #: :feature:`kaestchen.conf.EnvironmentSettings.dotenv.invalid_path`.
+    #: Note that the specified path will always be absolute, regardless of
+    #: how it was specified in the environment to make it explicit which
+    #: `.env` file was used on instantiation.
     dotenv_file: str | None = None
+
+    #: Directory for logging files.
     logdir: str = "logs"
 
 

@@ -27,6 +27,7 @@ extensions: list[str] = [
     "sphinx_rtd_theme",
     "sphinxcontrib.plantuml",
     "sphinx_feature_reference",
+    "sphinxcontrib.autodoc_pydantic",
 ]
 
 templates_path: list[str] = ["_templates"]
@@ -54,4 +55,11 @@ plantuml: Final[str] = f"java -jar {plantuml_jar_path}"
 
 # -- AutoDoc Configuration --------------------------------------------------
 
-autodoc_default_options: dict[str, bool] = {"members": True, "private-members": True}
+autodoc_default_options: dict[str, bool | str] = {
+    "members": True,
+    "private-members": True,
+    "undoc-members": False,
+    "show-inheritance": True,
+    "inherited-members": False,
+    "exclude-members": "_abc_impl",
+}
