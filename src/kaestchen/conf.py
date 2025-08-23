@@ -184,3 +184,7 @@ class Settings:
         resolved_reference: Any = self.__resolve_from_references("logdir")
         _logdir: str = cast(str, resolved_reference)
         return Path(_logdir)
+
+
+#: Pre-initialized settings object for 'ready-to-use' access
+settings: Settings = Settings()
