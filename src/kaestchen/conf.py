@@ -149,7 +149,9 @@ class EnvironmentSettings(BaseSettings):
     dotenv_file: str | None = None
 
     #: Directory for logging files.
-    logdir: str = "logs"
+    #:
+    #: If ``None`` no logfiles will be generated.
+    logdir: str | None = None
 
 
 class Settings:
@@ -179,9 +181,11 @@ class Settings:
         return value
 
     @property
-    def logdir(self) -> Path:
+    def logdir(self) -> Path | None:
         """Unresolved path to a Logging directory"""
         resolved_reference: Any = self.__resolve_from_references("logdir")
+        if resolved_reference is None:
+            return None
         _logdir: str = cast(str, resolved_reference)
         return Path(_logdir)
 
