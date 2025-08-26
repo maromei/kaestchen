@@ -5,7 +5,7 @@
 
 ```{plantuml}
 
-!theme sandstone
+!theme mars
 
 state "Kaestchen object" as kaestchenobj {
 
