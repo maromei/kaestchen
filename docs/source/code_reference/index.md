@@ -9,6 +9,7 @@ config_parser.model
 config_parser.validate
 config_parser.io
 conf
+loggers
 exceptions
 tests
 sphinx_feature_reference

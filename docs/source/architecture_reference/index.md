@@ -6,5 +6,6 @@
 
 configuration
 kaestchen_object_structure
+loggers
 plantuml
 ```

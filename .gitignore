@@ -25,3 +25,7 @@ docs/external/*
 
 # Personal notes
 .obsidian/
+
+# Default dev logging directory
+logs/*
+!logs/.gitkeep

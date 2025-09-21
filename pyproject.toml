@@ -75,6 +75,9 @@ extra-dependencies = [
     "ipython"
 ]
 
+[tool.hatch.envs.default.env-vars]
+KAESTCHEN_LOGDIR = "logs"
+
 ### Style ###
 
 [tool.hatch.envs.style]
@@ -136,3 +139,6 @@ cov = [
     "pytest --cov=kaestchen --cov-report html",
     "firefox file://$PWD/htmlcov/index.html"
 ]
+
+[tool.hatch.envs.tests.env-vars]
+KAESTCHEN_LOGDIR = "logs"
